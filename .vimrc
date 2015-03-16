@@ -36,3 +36,6 @@ let g:airline#extensions#tabline#enabled = 1
 map <C-J> :bnext<CR>
 map <C-K> :bprev<CR>
 behave xterm
+set expandtab
+set shiftwidth=2
+set softtabstop=2
