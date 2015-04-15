@@ -1,1 +1,1 @@
-Testing
+Peltzin oma vimrc + teemat
