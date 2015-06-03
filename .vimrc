@@ -43,3 +43,20 @@ set backspace=2
 
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
+
+if has("gui_running")
+  if has("gui_gtk2")
+    set lines=40 columns=160
+
+    set clipboard+=unnamed  " use the clipboards of vim and win
+    set paste               " Paste from a windows or from vim
+    set go+=a               " Visual selection automatically copied to the clipboard
+
+    " copy and paste
+    vmap <C-c> "+yi
+    vmap <C-x> "+c
+    vmap <C-v> c<ESC>"+p
+    imap <C-v> <ESC>"+pa
+
+  endif
+endif
