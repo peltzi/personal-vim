@@ -41,9 +41,6 @@ set shiftwidth=2
 set softtabstop=2
 set backspace=2
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
-
 if has("gui_running")
   if has("gui_gtk2")
     set lines=40 columns=160
@@ -60,3 +57,6 @@ if has("gui_running")
 
   endif
 endif
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
