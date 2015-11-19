@@ -6,6 +6,7 @@ set incsearch
 set autoindent
 set shiftwidth=2
 set expandtab
+set pastetoggle=<F2>
 syntax enable
 set background=dark
 let g:solarized_termcolors=256
