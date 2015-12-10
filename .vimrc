@@ -7,6 +7,7 @@ set autoindent
 set shiftwidth=2
 set expandtab
 syntax enable
+filetype plugin indent on
 set background=dark
 let g:solarized_termcolors=256
 
