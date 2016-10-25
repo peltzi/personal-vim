@@ -59,5 +59,12 @@ if has("gui_running")
   endif
 endif
 
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+highlight OverLength ctermbg=167 ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
+
+filetype plugin indent on
+syntax on
+
+let g:pymode_lint_on_fly = 1
+let g:pymode_indent = 1
+let g:pymode_rope = 0
