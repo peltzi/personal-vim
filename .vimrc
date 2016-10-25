@@ -4,13 +4,25 @@ set mouse=a
 set history=1000
 set incsearch
 set autoindent
-set shiftwidth=2
-set expandtab
 set pastetoggle=<F2>
-syntax enable
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set backspace=2
 set background=dark
-let g:solarized_termcolors=256
 
+syntax enable
+filetype plugin indent on
+
+colorscheme molokai 
+let g:solarized_termcolors=256
+let g:rehash256 = 1
+let g:airline_theme = 'solarized'
+let g:airline#extensions#tabline#enabled = 1
+
+let g:pymode_lint_on_fly = 1
+let g:pymode_indent = 1
+let g:pymode_rope = 0
 
 if &term =~ "xterm"
   " 256 colors
@@ -26,21 +38,6 @@ if &term =~ "xterm"
     let &t_Sb = "\<Esc>[4%dm"
   endif
 endif
-
-let g:rehash256 = 1
-colorscheme molokai 
-let g:airline_theme = 'solarized'
-hi Directory guifg=#FF0000 ctermfg=red
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
-let g:airline#extensions#tabline#enabled = 1
-map <C-J> :bnext<CR>
-map <C-K> :bprev<CR>
-behave xterm
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-set backspace=2
 
 if has("gui_running")
   if has("gui_gtk2")
@@ -59,12 +56,18 @@ if has("gui_running")
   endif
 endif
 
+hi Directory guifg=#FF0000 ctermfg=red
 highlight OverLength ctermbg=167 ctermfg=white guibg=#592929
+
 match OverLength /\%81v.\+/
 
-filetype plugin indent on
-syntax on
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
+map <C-t><up> :tabr<cr>
+map <C-t><down> :tabl<cr>
+map <C-t><left> :tabp<cr>
+map <C-t><right> :tabn<cr>
 
-let g:pymode_lint_on_fly = 1
-let g:pymode_indent = 1
-let g:pymode_rope = 0
+behave xterm
