@@ -73,4 +73,6 @@ map <C-t><right> :tabn<cr>
 " Automatically fix PEP8 errors in the current buffer:
 noremap <F8> :PymodeLintAuto<CR>:PymodeLint<CR>
 
+noremap <F5> :setlocal spell! spelllang=en_us<CR>
+
 behave xterm
