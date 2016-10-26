@@ -11,19 +11,6 @@ set softtabstop=2
 set backspace=2
 set background=dark
 
-syntax enable
-filetype plugin indent on
-
-colorscheme molokai 
-let g:solarized_termcolors=256
-let g:rehash256 = 1
-let g:airline_theme = 'solarized'
-let g:airline#extensions#tabline#enabled = 1
-
-let g:pymode_lint_on_fly = 1
-let g:pymode_indent = 1
-let g:pymode_rope = 0
-
 if &term =~ "xterm"
   " 256 colors
   let &t_Co = 256
@@ -38,6 +25,19 @@ if &term =~ "xterm"
     let &t_Sb = "\<Esc>[4%dm"
   endif
 endif
+
+syntax enable
+filetype plugin indent on
+
+colorscheme molokayo
+let g:solarized_termcolors=256
+let g:rehash256 = 1
+let g:airline_theme = 'solarized'
+let g:airline#extensions#tabline#enabled = 1
+
+let g:pymode_lint_on_fly = 1
+let g:pymode_indent = 1
+let g:pymode_rope = 0
 
 if has("gui_running")
   if has("gui_gtk2")
@@ -69,5 +69,8 @@ map <C-t><up> :tabr<cr>
 map <C-t><down> :tabl<cr>
 map <C-t><left> :tabp<cr>
 map <C-t><right> :tabn<cr>
+
+" Automatically fix PEP8 errors in the current buffer:
+noremap <F8> :PymodeLintAuto<CR>:PymodeLint<CR>
 
 behave xterm
