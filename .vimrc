@@ -39,6 +39,9 @@ let g:pymode_lint_on_fly = 1
 let g:pymode_indent = 1
 let g:pymode_rope = 0
 
+let g:ycm_disable_for_files_larger_than_kb = 500
+let b:ycm_largefile = 1
+
 if has("gui_running")
   if has("gui_gtk2")
     set lines=40 columns=160
@@ -63,6 +66,7 @@ match OverLength /\%81v.\+/
 
 autocmd VimEnter * NERDTree
 autocmd VimEnter * wincmd p
+autocmd VimEnter * silent! if bufname('%') !~# 'NERD_tree_' | silent NERDTreeFind | wincmd p | endif
 map <C-J> :bnext<CR>
 map <C-K> :bprev<CR>
 map <C-t><up> :tabr<cr>
@@ -74,5 +78,7 @@ map <C-t><right> :tabn<cr>
 noremap <F8> :PymodeLintAuto<CR>:PymodeLint<CR>
 
 noremap <F5> :setlocal spell! spelllang=en_us<CR>
+
+noremap <F9> :setlocal foldmethod=manual<CR>
 
 behave xterm
