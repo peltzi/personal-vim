@@ -79,6 +79,16 @@ noremap <F8> :PymodeLintAuto<CR>:PymodeLint<CR>
 
 noremap <F5> :setlocal spell! spelllang=en_us<CR>
 
-noremap <F9> :setlocal foldmethod=manual<CR>
+function! FoldMethodToggle()
+  if !exists('b:old_foldmethod')
+    let b:old_foldmethod=&foldmethod
+    setlocal foldmethod=manual
+  else
+    execute "setlocal foldmethod=".b:old_foldmethod
+    unlet b:old_foldmethod
+  endif
+endfunction
+
+noremap <F9> :call FoldMethodToggle() <bar>:set foldmethod<CR>
 
 behave xterm
