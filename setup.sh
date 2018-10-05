@@ -35,17 +35,17 @@ while true; do
 done
 echo
 
-# Sync our modules and stuff to users dir, ignore YouCompleteMe lib
-rsync -av \
-  --exclude bundle/YouCompleteMe/third_party/ycmd/ycm_core.so \
-  ${GIT_DIR}/.vim/ \
-  ~/.vim/
-
-# If we have no ycm_core.so build one
-if [ ! -f $HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ];
-then
-  $HOME/.vim/bundle/YouCompleteMe/install.py
-fi
+## Sync our modules and stuff to users dir, ignore YouCompleteMe lib
+#rsync -av \
+#  --exclude bundle/YouCompleteMe/third_party/ycmd/ycm_core.so \
+#  ${GIT_DIR}/.vim/ \
+#  ~/.vim/
+#
+## If we have no ycm_core.so build one
+#if [ ! -f $HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ];
+#then
+#  $HOME/.vim/bundle/YouCompleteMe/install.py
+#fi
 
 # As if user wants to overwrite ~/.vimrc
 while true; do
