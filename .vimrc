@@ -11,6 +11,8 @@ set softtabstop=2
 set backspace=2
 set background=dark
 
+set nofoldenable
+
 if &term =~ "xterm"
   " 256 colors
   let &t_Co = 256
