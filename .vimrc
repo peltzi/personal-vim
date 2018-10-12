@@ -1,4 +1,5 @@
 execute pathogen#infect()
+set autochdir
 set number
 set mouse=a
 set history=1000
@@ -43,6 +44,8 @@ let g:pymode_rope = 0
 
 let g:ycm_disable_for_files_larger_than_kb = 500
 let b:ycm_largefile = 1
+
+let NERDTreeShowHidden=1
 
 if has("gui_running")
   if has("gui_gtk2")
