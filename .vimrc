@@ -11,6 +11,9 @@ set shiftwidth=2
 set softtabstop=2
 set backspace=2
 set background=dark
+set list
+set lcs+=space:·
+set foldmethod=manual
 
 set nofoldenable
 
@@ -37,6 +40,7 @@ let g:solarized_termcolors=256
 let g:rehash256 = 1
 let g:airline_theme = 'solarized'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 let g:pymode_lint_on_fly = 1
 let g:pymode_indent = 1
@@ -46,6 +50,10 @@ let g:ycm_disable_for_files_larger_than_kb = 500
 let b:ycm_largefile = 1
 
 let NERDTreeShowHidden=1
+
+let g:bufferline_fname_mod = ':t'
+let g:bufferline_active_buffer_left = '['
+let g:bufferline_active_buffer_right = ']'
 
 if has("gui_running")
   if has("gui_gtk2")
@@ -95,5 +103,8 @@ function! FoldMethodToggle()
 endfunction
 
 noremap <F9> :call FoldMethodToggle() <bar>:set foldmethod<CR>
+
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
 
 behave xterm
