@@ -37,3 +37,6 @@
 [submodule ".vim/bundle/molokayo"]
 	path = .vim/bundle/molokayo
 	url = https://github.com/fmoralesc/molokayo.git
+[submodule ".vim/bundle/fzf.vim"]
+	path = .vim/bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
