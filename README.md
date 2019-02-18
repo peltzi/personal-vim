@@ -8,4 +8,6 @@ Mainly for my Python editing stuff.:
 Seems to work well enough for Chef (Ruby) too. Plugins for some other stuff
 like Go and TOML also present.
 
+Outside requirements: fzf
+
 Intended for my personal use mostly.
