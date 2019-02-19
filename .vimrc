@@ -115,3 +115,8 @@ command! -bang -nargs=* GG
   \ call fzf#vim#grep(
   \   'git grep --line-number '.shellescape(<q-args>, '-e'), 0,
   \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   "rg --hidden --column --line-number --no-heading --color=always --smart-case "
+  \   .shellescape(<q-args>), 1, <bang>0)
