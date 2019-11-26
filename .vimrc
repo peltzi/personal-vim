@@ -39,6 +39,10 @@ let g:bufferline_fname_mod = ':t'
 let g:bufferline_active_buffer_left = '['
 let g:bufferline_active_buffer_right = ']'
 
+" Vim terrraform
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
+
 hi Directory guifg=#FF0000 ctermfg=red
 highlight OverLength ctermbg=167 ctermfg=white guibg=#592929
 
