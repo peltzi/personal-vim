@@ -1,0 +1,5 @@
+{
+  "diagnostic.virtualText": true,
+  "rust-analyzer.updates.channel": "stable",
+  "rust-analyzer.inlayHints.chainingHints": false
+}

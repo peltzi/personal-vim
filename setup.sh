@@ -19,12 +19,9 @@ echo
 # Make sure we are in git root
 cd ${GIT_DIR}
 
-# Update submodules to fetch the latest
-git submodule update --init --recursive
-
-# As if user wants to overwrite ~/.vim/ contents
+# Ask if user wants to overwrite ~/.config/nvim/ contents
 while true; do
-    read -p "Do want to overwrite contents of ~/.vim/ ? [Y/N] " yn
+    read -p "Do want to overwrite contents of ~/.config/nvim/ ? [Y/N] " yn
     case $yn in
         [Yy]* ) break;;
         [Nn]* )
@@ -35,29 +32,6 @@ while true; do
 done
 echo
 
-## Sync our modules and stuff to users dir, ignore YouCompleteMe lib
-#rsync -av \
-#  --exclude bundle/YouCompleteMe/third_party/ycmd/ycm_core.so \
-#  ${GIT_DIR}/.vim/ \
-#  ~/.vim/
-#
-## If we have no ycm_core.so build one
-#if [ ! -f $HOME/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ];
-#then
-#  $HOME/.vim/bundle/YouCompleteMe/install.py
-#fi
-
-# As if user wants to overwrite ~/.vimrc
-while true; do
-    read -p "Do want to overwrite your ~/.vimrc ? [Y/N] " yn
-    case $yn in
-        [Yy]* ) break;;
-        [Nn]* )
-               echo "Nothing to do, exiting."
-               exit;;
-        * ) echo "Please answer Y or N.";;
-    esac
-done
-echo
-cp ~/.vimrc ~/.vimrc.BAK
-cp ${GIT_DIR}/.vimrc ~/.vimrc
+[ -f ~/.config/nvim ] && cp -R ~/.config/nvim ~/.config/nvim.BAK
+mkdir -p ~/.config/nvim
+cp -R ${GIT_DIR}/.config/nvim/. ~/.config/nvim
